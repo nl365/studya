@@ -31,6 +31,7 @@ public class Main {
 		});
 		// task执行结束再延迟5s 启动下一个task
 		ScheduledFuture<?> sf = exec.scheduleWithFixedDelay(new Task("[schedule task]"), 1, 5, TimeUnit.SECONDS);
+		System.out.println("sf.isDone()=" + sf.isDone());
 
 		System.out.println("=========main end");
 	}

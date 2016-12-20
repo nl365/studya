@@ -32,7 +32,8 @@ public class Main {
 		// 延迟1s，然后每隔5s执行一次
 		// 发现即便线程池中可以有4个线程来处理任务但是任务仍然是处理完了才回发出下一个task，如果task时间超过了设定的delay时间，会等待task结束再进行下一个task
 		ScheduledFuture<?> sf = exec.scheduleAtFixedRate(new Task("[schedule task]"), 1, 5, TimeUnit.SECONDS);
-
+		System.out.println("sf.isDone()=" + sf.isDone());
+		
 		System.out.println("=========main end");
 	}
 }
