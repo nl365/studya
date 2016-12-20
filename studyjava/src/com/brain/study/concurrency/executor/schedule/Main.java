@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ScheduledExecutorService#awaitTermination
+ * schedule ScheduledExecutorService#awaitTermination
  * 
  * @author brain
  *
