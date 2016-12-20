@@ -17,8 +17,7 @@ public class Client {
 
 		c22.addComponent(l3);
 		c22.addComponent(c3);
-	
-		
+
 		root.addComponent(c1);
 		root.operation();
 	}

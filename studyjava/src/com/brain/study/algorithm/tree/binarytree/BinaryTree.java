@@ -48,8 +48,7 @@ public class BinaryTree<T> {
 	 * @param dataQueue
 	 * @return
 	 */
-	private BinaryTreeNode<T> createTree(BinaryTreeNode<T> node,
-			LinkedList<T> dataQueue) {
+	private BinaryTreeNode<T> createTree(BinaryTreeNode<T> node, LinkedList<T> dataQueue) {
 		if (dataQueue == null) {
 			return null;
 		}
@@ -184,8 +183,7 @@ public class BinaryTree<T> {
 	 * @param node2
 	 * @return common parent node
 	 */
-	public BinaryTreeNode<T> getLastCommonParent(BinaryTreeNode<T> node1,
-			BinaryTreeNode<T> node2) {
+	public BinaryTreeNode<T> getLastCommonParent(BinaryTreeNode<T> node1, BinaryTreeNode<T> node2) {
 		return getLastCommonParent(root, node1, node2);
 	}
 
@@ -201,12 +199,10 @@ public class BinaryTree<T> {
 		postorderTraverseW(root);
 	}
 
-	public Stack<BinaryTreeNode<T>> getPath(
-			BinaryTreeNode<T> node) {
+	public Stack<BinaryTreeNode<T>> getPath(BinaryTreeNode<T> node) {
 		if (root == null || node == null) {
 			return null;
 		}
-		
 
 		return path(root, node);
 	}
@@ -257,9 +253,9 @@ public class BinaryTree<T> {
 		stack.push(root);
 		while (!stack.isEmpty()) {
 			cur = stack.peek();
-		
-			if ((!cur.hasLeftRoot() && !cur.hasRightRoot()) ||
-				(pre != null && (cur.getLeftRoot() == pre || cur.getRightRoot() == pre))) {
+
+			if ((!cur.hasLeftRoot() && !cur.hasRightRoot())
+					|| (pre != null && (cur.getLeftRoot() == pre || cur.getRightRoot() == pre))) {
 				visit(cur);
 				stack.pop();
 				pre = cur;
@@ -295,8 +291,7 @@ public class BinaryTree<T> {
 		}
 	}
 
-	private BinaryTreeNode<T> find(BinaryTreeNode<T> root,
-			BinaryTreeNode<T> node) {
+	private BinaryTreeNode<T> find(BinaryTreeNode<T> root, BinaryTreeNode<T> node) {
 		if (root == null || node == null) {
 			return null;
 		}
@@ -317,8 +312,8 @@ public class BinaryTree<T> {
 		}
 	}
 
-	private BinaryTreeNode<T> getLastCommonParent(BinaryTreeNode<T> root,
-			BinaryTreeNode<T> node1, BinaryTreeNode<T> node2) {
+	private BinaryTreeNode<T> getLastCommonParent(BinaryTreeNode<T> root, BinaryTreeNode<T> node1,
+			BinaryTreeNode<T> node2) {
 		if (find(root.getLeftRoot(), node1) != null) {
 			if (find(root.getRightRoot(), node2) != null) {
 				return root;
@@ -414,8 +409,7 @@ public class BinaryTree<T> {
 		if (root == null) {
 			return 0;
 		} else {
-			return Math.max(getDepth(root.getLeftRoot()),
-					getDepth(root.getRightRoot())) + 1;
+			return Math.max(getDepth(root.getLeftRoot()), getDepth(root.getRightRoot())) + 1;
 		}
 	}
 
@@ -423,22 +417,18 @@ public class BinaryTree<T> {
 		if (root == null) {
 			return 0;
 		} else {
-			return getNodeCount(root.getLeftRoot())
-					+ getNodeCount(root.getRightRoot()) + 1;
+			return getNodeCount(root.getLeftRoot()) + getNodeCount(root.getRightRoot()) + 1;
 		}
 	}
 
-	private boolean compareStructure(BinaryTreeNode<T> root,
-			BinaryTreeNode<T> otherRoot) {
+	private boolean compareStructure(BinaryTreeNode<T> root, BinaryTreeNode<T> otherRoot) {
 		if (root == null && otherRoot == null) {
 			return true;
 		} else if (root == null || otherRoot == null) {
 			return false;
 		} else {
-			boolean leftEqual = compareStructure(root.getLeftRoot(),
-					otherRoot.getLeftRoot());
-			boolean rightEqual = compareStructure(root.getRightRoot(),
-					otherRoot.getRightRoot());
+			boolean leftEqual = compareStructure(root.getLeftRoot(), otherRoot.getLeftRoot());
+			boolean rightEqual = compareStructure(root.getRightRoot(), otherRoot.getRightRoot());
 
 			return leftEqual && rightEqual;
 		}
@@ -500,8 +490,7 @@ public class BinaryTree<T> {
 		}
 		return true;
 	}
-	
-	
+
 	private Stack<BinaryTreeNode<T>> path(BinaryTreeNode<T> root, BinaryTreeNode<T> node) {
 		if (root == null) {
 			return null;
@@ -517,7 +506,7 @@ public class BinaryTree<T> {
 
 				t = t.getLeftRoot();
 			}
-			
+
 			t = stack.peek();
 
 			if (t.isVisited()) {
@@ -527,7 +516,7 @@ public class BinaryTree<T> {
 			}
 			t = t.getRightRoot();
 		}
-		
+
 		return null;
 	}
 

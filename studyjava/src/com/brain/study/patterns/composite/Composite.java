@@ -8,13 +8,14 @@ import java.util.List;
 
 /**
  * AbsComponent
+ * 
  * @author Brain
  * @date 2014-12-7
  */
 public class Composite implements Component {
 
 	private List<Component> components = new ArrayList<Component>();
-	
+
 	/**
 	 * 
 	 */
@@ -22,8 +23,9 @@ public class Composite implements Component {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.brain.study.patterns.composite.Component#operation()
 	 */
 	@Override
@@ -31,18 +33,17 @@ public class Composite implements Component {
 		for (Component c : components) {
 			c.operation();
 		}
-	    doSomething();
+		doSomething();
 	}
-
 
 	@Override
 	public void addComponent(Component component) {
-		components.add(component);		
+		components.add(component);
 	}
 
 	@Override
 	public void removeCommponent(Component component) {
-		components.add(component);		
+		components.add(component);
 	}
 
 	@Override
@@ -50,10 +51,9 @@ public class Composite implements Component {
 		return components.get(i);
 	}
 
-
 	private void doSomething() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

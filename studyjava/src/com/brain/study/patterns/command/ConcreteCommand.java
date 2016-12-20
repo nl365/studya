@@ -5,6 +5,7 @@ package com.brain.study.patterns.command;
 
 /**
  * ConcreteCommand
+ * 
  * @author Brain
  * @date 2014-12-8
  */

@@ -6,7 +6,7 @@ public class Client {
 		Abstraction abstraction = new RefinedAbstraction();
 		abstraction.setImplementor(new ConcreteImplementorA());
 		abstraction.operation();
-		
+
 		abstraction.setImplementor(new ConcreteImplementorB());
 		abstraction.operation();
 	}

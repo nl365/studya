@@ -5,14 +5,15 @@ package com.brain.study.patterns.builder2;
 
 /**
  * Product
+ * 
  * @author Brain
  * @date 2014-12-7
  */
-public abstract  class Product {
+public abstract class Product {
 
 	private Object objectA;
 	private Object objectB;
-	
+
 	/**
 	 * 
 	 */
@@ -38,7 +39,7 @@ public abstract  class Product {
 
 	public void doSomething() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

@@ -4,7 +4,8 @@
 package com.brain.study.patterns.cmd_chainofresponsibility;
 
 /**
- * ConcreteHandler3 
+ * ConcreteHandler3
+ * 
  * @author Brain
  * @date 2014-12-8
  */
@@ -15,6 +16,6 @@ public class ConcreteHandler3 extends Handler {
 
 	@Override
 	public void handleRequest() {
-		
+
 	}
 }

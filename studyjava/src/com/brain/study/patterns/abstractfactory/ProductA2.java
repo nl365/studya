@@ -5,6 +5,7 @@ package com.brain.study.patterns.abstractfactory;
 
 /**
  * ProductA1
+ * 
  * @author Brain
  * @date 2014-12-8
  */

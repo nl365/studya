@@ -4,30 +4,31 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class PrintQueue2 {
-	//	private Lock queueLock = new ReentrantLock();
-    private final Lock queueLock = new ReentrantLock(true);  // 传入fair 为true  
+	// private Lock queueLock = new ReentrantLock();
+	private final Lock queueLock = new ReentrantLock(true); // 传入fair 为true
 
 	public PrintQueue2() {
 	}
 
-	public void printJob(Object doc) {  
-	    queueLock.lock();  
-	    System.out.println("queueLock.lock()");  
-	    long duration = (long) (Math.random() * 10000 );  
-	    System.out.println(Thread.currentThread().getName() + " :  start print " + (duration / 1000) + " secs");  
-	    try {  
-	        Thread.sleep(duration);  
-	    } catch (InterruptedException e) {  
-	        e.printStackTrace();  
-	    } finally {  
-	        System.out.println("queueLock.unlock()");  
-	        queueLock.unlock();  
-	    }  
-	    System.out.println(Thread.currentThread().getName() + " :   print completed");  
-	}  
-	
+	public void printJob(Object doc) {
+		queueLock.lock();
+		System.out.println("queueLock.lock()");
+		long duration = (long) (Math.random() * 10000);
+		System.out.println(Thread.currentThread().getName() + " :  start print " + (duration / 1000) + " secs");
+		try {
+			Thread.sleep(duration);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("queueLock.unlock()");
+			queueLock.unlock();
+		}
+		System.out.println(Thread.currentThread().getName() + " :   print completed");
+	}
+
 	/**
 	 * Job
+	 * 
 	 * @author brain
 	 *
 	 */

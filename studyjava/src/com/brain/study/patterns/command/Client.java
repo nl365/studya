@@ -6,9 +6,9 @@ public class Client {
 		Command command = new ConcreteCommand(receiver);
 		Invoker invoker = new Invoker();
 		invoker.setCommand(command);
-		
+
 		//
-		
+
 		invoker.execute();
 	}
 

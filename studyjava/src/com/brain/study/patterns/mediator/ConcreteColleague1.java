@@ -5,6 +5,7 @@ package com.brain.study.patterns.mediator;
 
 /**
  * ConcreteColleague1
+ * 
  * @author Brain
  * @date 2014-12-8
  */

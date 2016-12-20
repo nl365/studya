@@ -15,7 +15,6 @@ public class Producer implements Runnable {
 		this.storage = storage;
 	}
 
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -28,4 +27,3 @@ public class Producer implements Runnable {
 		}
 	}
 }
-

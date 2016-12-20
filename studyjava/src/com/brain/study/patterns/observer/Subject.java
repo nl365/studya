@@ -15,6 +15,7 @@ import java.util.List;
 public class Subject {
 
 	private List<Observer> observers = new ArrayList<Observer>();
+
 	public void addObserver(Observer observer) { // attach
 		observers.add(observer);
 	}

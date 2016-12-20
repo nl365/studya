@@ -5,6 +5,7 @@ package com.brain.study.patterns.decorator;
 
 /**
  * ConcreteComponent
+ * 
  * @author Brain
  * @date 2014-12-7
  */
@@ -20,7 +21,7 @@ public class ConcreteComponent implements Component {
 	@Override
 	public void operation() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

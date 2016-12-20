@@ -15,6 +15,7 @@ public class Main {
 
 	/**
 	 * 关注线程的get方法
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

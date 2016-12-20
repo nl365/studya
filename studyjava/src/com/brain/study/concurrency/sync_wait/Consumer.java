@@ -16,7 +16,9 @@ public class Consumer implements Runnable {
 		this.storage = storage;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Runnable#run()
 	 */
 	@Override

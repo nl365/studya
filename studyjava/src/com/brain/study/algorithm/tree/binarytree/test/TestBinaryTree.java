@@ -60,7 +60,6 @@ public class TestBinaryTree {
 	public void tearDown() throws Exception {
 	}
 
-	
 	public void testPostorderTraverse() {
 		binaryTree.postorderTraverseW();
 	}

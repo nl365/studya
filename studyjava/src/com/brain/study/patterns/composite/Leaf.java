@@ -28,7 +28,7 @@ public class Leaf implements Component {
 
 	private void doSomething() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

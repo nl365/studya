@@ -5,6 +5,7 @@ package com.brain.study.patterns.decorator;
 
 /**
  * ConcreteDecoratorA
+ * 
  * @author Brain
  * @date 2014-12-7
  */
@@ -19,6 +20,6 @@ public class ConcreteDecoratorA extends Decorator {
 	}
 
 	public void otherOperationA() {
-		
+
 	}
 }

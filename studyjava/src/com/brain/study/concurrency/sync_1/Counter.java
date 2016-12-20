@@ -22,8 +22,9 @@ public class Counter {
 		this.count++;
 	}
 
-	public /*synchronized*/ void subtraction() { // 如果不进行线程同步 count出现负值的情况 加上 synchronized 就不一样了
-		if (this.count > 0) { 
+	public /* synchronized */ void subtraction() { // 如果不进行线程同步 count出现负值的情况 加上
+													// synchronized 就不一样了
+		if (this.count > 0) {
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {

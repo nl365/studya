@@ -5,6 +5,7 @@ package com.brain.study.patterns.state;
 
 /**
  * ConcreteStateB
+ * 
  * @author Brain
  * @date 2014-12-8
  */
@@ -17,7 +18,9 @@ public class ConcreteStateB implements State {
 		// TODO Auto-generated constructor stub
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.brain.study.patterns.state.State#handle()
 	 */
 	@Override

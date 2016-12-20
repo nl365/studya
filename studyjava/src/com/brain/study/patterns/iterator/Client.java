@@ -8,7 +8,7 @@ public class Client {
 		}
 		objs.remove("9");
 		Iterator<String> iterator = objs.iterator();
-		for (;iterator.hasNext(); ) {
+		for (; iterator.hasNext();) {
 			System.out.println(iterator.next());
 		}
 	}
