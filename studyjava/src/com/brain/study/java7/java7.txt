@@ -1,0 +1,24 @@
+1.对集合类的语言支持；
+
+2.自动资源管理；
+Java中某些资源是需要手动关闭的，如InputStream，Writes，Sockets，Sql classes等。这个新的语言特性允许try语句本身申请更多的资源，这些资源作用于try代码块，并自动关闭。
+
+3.改进的通用实例创建类型推断；
+
+4.数字字面量下划线支持；
+
+5.switch中使用string；
+
+6.二进制字面量；
+
+7.简化可变参数方法调用。
+
+
+java7异常处理改进 
+(1)Throwable类增加addSuppressed方法和getSuppressed方法，支持原始异常中加入被抑制的异常。 
+异常抑制：在try和finally中同时抛出异常时，finally中抛出的异常会在异常栈中向上传递，而try中产生的原始异常会消失。 
+(2)catch子句可以同时捕获多个异常 
+(3)try-with-resources语句 
+Java7之前需要在finally中关闭socket、文件、数据库连接等资源； 
+Java7中在try语句中申请资源，实现资源的自动释放（资源类必须实现java.lang.AutoCloseable接口，一般的文件、数据库连接等均已实现该接口，close方法将被自动调用）。 
+
