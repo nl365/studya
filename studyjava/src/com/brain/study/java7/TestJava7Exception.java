@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.brain.study.java7.autoclose;
+package com.brain.study.java7;
 
 import java.io.IOException;
 
