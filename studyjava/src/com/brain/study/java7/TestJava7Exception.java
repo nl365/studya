@@ -60,10 +60,10 @@ public class TestJava7Exception {
 		try (AutoClose is1 = new AutoClose("auto 1"); AutoClose is2 = new AutoClose("auto 2")) {
 			System.out.println("try");
 			throw new RuntimeException("test exception");
-		} catch (IOException | RuntimeException e) { // 使用'|'分割，多个类型，只有一个对象
+		} catch (IOException | RuntimeException e) { // 使用'|'分割，多个类型，只有一个对象 异常类间不能有继承关系
 			System.out.println("catch");
 			Throwable throwable = new Exception("exception");
-			throwable.addSuppressed(e);
+			throwable.addSuppressed(e);  // addSuppressed 支持原始异常中加入被抑制的异常
 			throw throwable;
 		} finally {
 			System.out.println("finally");
