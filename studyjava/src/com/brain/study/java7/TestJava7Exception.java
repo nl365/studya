@@ -13,10 +13,6 @@ import java.io.IOException;
 (3)try-with-resources语句 
 Java7之前需要在finally中关闭socket、文件、数据库连接等资源； 
 Java7中在try语句中申请资源，实现资源的自动释放（资源类必须实现java.lang.AutoCloseable接口，一般的文件、数据库连接等均已实现该接口，close方法将被自动调用）。 
-
-
- * @author brain
- *
  */
 public class TestJava7Exception {
 

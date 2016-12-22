@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         /**[003]Android的线程机制
          *
-         */
+         */ArrayList<String> list = new ArrayList<>();
         Handler handler = new Handler();
         Looper.prepare();
 
