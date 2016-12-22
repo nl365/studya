@@ -42,8 +42,8 @@ class Person {
 };
 
 /**
- * WeakHashMap 有一种key值可以重复的map
- * 
+ * WeakHashMap.Entry内部类 继承自WeakReference 实现Map.Entry<K,V>
+   private static class Entry<K,V> extends WeakReference<Object> implements Map.Entry<K,V> {
  * @author brain
  */
 public class WeakHashMapDemo {
