@@ -4,7 +4,7 @@
 package com.brain.study.patterns.singleton;
 
 /**
- * SingletonA
+ * Singleton两次检验的单例模式
  * 
  * @author Brain
  * @date 2014-12-7

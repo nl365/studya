@@ -37,7 +37,7 @@ class Person {
 
 	@Override
 	public String toString() {
-		return "姓名：" + this.name + "；年龄：" + this.age;
+		return "name:" + this.name + "；age：" + this.age;
 	}
 };
 
