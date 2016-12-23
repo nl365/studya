@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * AbsComponent
+ * Composite
+ * 将对象组织成树形结构，来表示部分-整体的层次结构，使得用户对单个对象和组合对象的操作具有一致性
  * 
  * @author Brain
  * @date 2014-12-7
