@@ -12,6 +12,7 @@ public class ConcreteAggregate<T> implements Iterable<T> {
 		if (size < MAX_SIZE) {
 			data[size++] = t;
 		}
+		// 简化表示 没有写grow
 	}
 
 	public void remove(T t) {
