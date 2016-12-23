@@ -157,9 +157,20 @@ public class Main {
 	}
 	
 	
-	//	observable.subscribe(observer);  或者： observable.subscribe(subscriber);
+//	observable.subscribe(observer);  或者： observable.subscribe(subscriber);
 //	有人可能会注意到， subscribe() 这个方法有点怪：它看起来是『observalbe 订阅了 observer / subscriber』
 //	而不是『observer / subscriber 订阅了 observalbe』，这看起来就像『杂志订阅了读者』一样颠倒了对象关系。
 //	这让人读起来有点别扭，不过如果把 API 设计成 observer.subscribe(observable) / subscriber.subscribe(observable) ，
 //	虽然更加符合思维逻辑，但对流式 API 的设计就造成影响了，比较起来明显是得不偿失的。
+	
+//	Observer 和 Subscriber 具有相同的角色，而且 Observer 在 subscribe() 过程中最终会被转换成 Subscriber 对象，
+//	因此，从这里开始，后面的描述我将用 Subscriber 来代替 Observer ，这样更加严谨。
+	
+	
+//	在 RxJava 的默认规则中，事件的发出和消费都是在同一个线程的。
+//	也就是说，如果只用上面的方法，实现出来的只是一个同步的观察者模式。
+//	观察者模式本身的目的就是『后台处理，前台回调』的异步机制，因此异步对于 RxJava 是至关重要的。
+//	而要实现异步，则需要用到 RxJava 的另一个概念： Scheduler 。
+
+
 }
