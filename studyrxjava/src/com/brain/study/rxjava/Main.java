@@ -3,10 +3,14 @@
  */
 package com.brain.study.rxjava;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action0;
 import rx.functions.Action1;
+import rx.functions.Func1;
 
 /**
  * @author brain
@@ -22,11 +26,9 @@ public class Main {
 		// test2();
 		// test3();
 		// test4();
-		test5();
-		test6();
-		test7();
-//		test8();
-
+//		testJavaLambda();
+//		testRxjavaFrom();
+		testRxjavaFlatMap();
 	}
 
 	public static void test1() {
@@ -114,16 +116,34 @@ public class Main {
 		});
 	}
 
-	public static void test5() {
+	public static void testJavaLambda() {
+		Observable.just("test lambda")
+				  .subscribe(new Action1<String>(){
+					  @Override
+					public void call(String s) {
+						  System.out.println(s);
+					}
+				  });
 		// 使用java8的lambda可以使代码更简洁
 		Observable.just("test lambda")
 				  .subscribe(s -> System.out.println(s));
 	}
 
-	// map操作符，就是用来把把一个事件转换为另一个事件的。
 	// map()操作符就是用于变换Observable对象的，map操作符返回一个Observable对象，这样就可以实现链式调用，
 	// 在一个Observable对象上多次使用map操作符，最终将最简洁的数据传递给Subscriber对象。
-	public static void test6() {
+	public static void testRxjavaMap() {
+		Observable.just("test map()")
+		  		// 和 ActionX 一样， FuncX 也有多个，用于不同参数个数的方法。
+				// FuncX 和 ActionX 的区别在 FuncX 包装的是有返回值的方法。
+				// 第二个泛型参数是返回值类型
+ 		  		  .map(new Func1<String, String>(){ 
+					  @Override
+					public String call(String s) {
+						return  s + " : map string to string ";
+					}
+				  })
+        		  .subscribe(s -> System.out.println(s));
+		// map操作符，就是用来把把一个事件转换为另一个事件的。
 		Observable.just("test map()")
 		          .map(s -> s + " : map string to string ")
 		          .subscribe(s -> System.out.println(s));
@@ -131,7 +151,23 @@ public class Main {
 	}
 
 	// map操作符更有趣的一点是它不必返回Observable对象返回的类型，你可以使用map操作符返回一个发出新的数据类型的observable对象。
-	public static void test7() {
+	public static void testRxjavaMapDiffrentClass() {
+		Observable.just("test map() 变成另一个类型")
+				  .map(new Func1<String, Integer>() {
+			
+						@Override
+						public Integer call(String s) {
+							return s.hashCode();
+						}
+					})
+				  .subscribe(new Action1<Integer>() {
+
+					@Override
+					public void call(Integer i) {
+						System.out.println(Integer.toString(i));
+					}
+				});
+		
 		Observable.just("test map() 变成另一个类型")
 				  .map(s -> s.hashCode())
 				  .subscribe(i -> System.out.println(Integer.toString(i)));
@@ -145,18 +181,18 @@ public class Main {
 	
 //	just(T...): 将传入的参数依次发送出来。
 //	from(T[]) / from(Iterable<? extends T>) : 将传入的数组或 Iterable 拆分成具体对象后，依次发送出来。
-	public static void test10(String... names) {
-		Observable.from(names).subscribe(new Action1<String>() {
+	public static void testRxjavaFrom() {
+		String[] array = {"a", "b", "c"};
+		Observable.from(array).subscribe(new Action1<String>() {
 
 			@Override
 			public void call(String s) {
-				System.out.println("Hello " + s + "!");
+				System.out.println(s);
 			}
-
 		});
 	}
 	
-	
+
 //	observable.subscribe(observer);  或者： observable.subscribe(subscriber);
 //	有人可能会注意到， subscribe() 这个方法有点怪：它看起来是『observalbe 订阅了 observer / subscriber』
 //	而不是『observer / subscriber 订阅了 observalbe』，这看起来就像『杂志订阅了读者』一样颠倒了对象关系。
