@@ -21,6 +21,20 @@ public class Test3 {
 				System.out.println(i);
 			}
 		}
+		
+		System.out.println("方法2");
+
+		// 方法2
+		for (int i = 0; i <= 9; i++) {
+			for (int j = 0; j <= 9; j++) {
+				for (int k = 0; k <= 9; k++) {
+					int num = 100*i+10*j+k;
+					if (i*i*i+j*j*j+k*k*k == num && num > 99) {
+						System.out.println(num);
+					}
+				}
+			}
+		}
 	}
 
 	public static boolean isShuixianNum(int num) {
@@ -33,4 +47,6 @@ public class Test3 {
 		return num == a0 * a0 * a0 + a1 * a1 * a1 + a2 * a2 * a2;
 	}
 
+	
+	
 }

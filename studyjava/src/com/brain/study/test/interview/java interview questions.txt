@@ -1,154 +1,24 @@
-【程序1】
-
+【程序1】 ok
 題目：古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一
 对兔子，假如兔子都不死，问每个月的兔子总数为多少？
-
-微笑刚开始真的无从下手，这么难的，怎么可以说是基础呢，感觉这些应该是逻辑分析很强的，第一个月只有一对兔子，第二个月还是只有一对兔子，第三个月，就有两对了，第四个月3对，第五个月5对，第六个月8对，第七个月是13对。。。。。。规律出来了，你们发了没？
-
-[java] view plain copy
-public class Example1{  
-    public static void main(String args[]){   
-    //i是表示月份的，这里计算了36个月，也就是三年，兔子的数量  
-      int i;  
-      long arr[]=new long[36];   //这个数组时用来计算每月有兔子的对数  
-      arr[0]=arr[1]=1;  
-      System.out.println("第1个月有兔子1对"+", "+"总数是"+2);  
-      System.out.println("第2个月有兔子1对"+", "+"总数是"+2);  
-      for(i=2;i<=35;i++){  
-         arr[i]=arr[i-1]+arr[i-2];  
-         System.out.println("第"+i+"个月有兔子"+arr[i]+"对"+", "+"总数是"+2*arr[i]);  
-             //规律是 每个数字都是前面两个数字之和  
-         }  
-   }  
-          
-}  
-OK，用时45分钟。
-
-【程序2】 
+【程序2】 ok
 题目：判断101-200之间有多少个素数，并输出所有素数。 
 
-素数又叫质数，就是除了1和它本身之外，再也没有整数能被它整除的数。也就是素数只有两个因子。
-
-[java] view plain copy
-public class Example2 {  
-public static void main(String args[]){  
-    int i,j,n,m,x;      //n是用来存储余数的；m是用来统计具体一个数的因子；  
-    n=0;m=0;x=0;        //x是用来统计101~200之前素数的个数  
-    for(i=101;i<=200;i++){             //两重循环  
-        for(j=1;j<=i;j++){         
-            n=i%j;                    //去余数，如果余数为零，就是该数的因子  
-            if(n==0)  { m=m+1; }      //统计某数有多少个因子  
-            }   
-     if(m==2){System.out.print(i+" "); x=x+1;} //如果某数的因子只有两个，那它就一定是素数，那这个数就应该输出  
-          m=0;            //一定要清零，不然会继续累加  
-        }  
-       System.out.println();  
-       System.out.println("在101~200之間一共有素數："+x+"個");  
-        }  
-   }  
-我好笨啊，这题我做了两个钟头，最终还是解决了。加油
-
-【程序3】
+【程序3】 ok
 题目：打印出所有的"水仙花数"，所谓"水仙花数"是指一个三位数，其各位数字立方和等于该数本身。例如：
 153是一个"水仙花数"，因为153=1的三次方＋5的三次方＋3的三次方。想当年，做这些题都是网上找答案，如今事过境迁，不会也得会。
 
-[java] view plain copy
-public class Example3 {  
-    public static void main(String args[]){   
-       int a,sum;     //表示100~999  
-       int i,j,k;//分别表示百位、十位、各位  
-       for(a=100;a<=999;a++){  
-           i=a/100;  
-           j=(a-i*100)/10;  
-           k=a-i*100-j*10;  
-           sum=i*i*i+j*j*j+k*k*k;   
-           //java的运算符，立方要这样写，写成i^3这样，竟然运算不出来  
-           //如果遇到高次的话可以使用循环算出来  
-           if(sum==a)  
-           { System.out.println(sum);  
-            }  
-             
-       }  
 
-还是有学到点东西，应该还有别的方法。那我就试试吧。
-[java] view plain copy
-public class Example4 {  
-    public static void main(String args[]){   
-       int sum;      
-       int i,j,k;//分别表示百位、十位、各位  
-      for(i=1;i<=9;i++){  
-          for(j=0;j<=9;j++){  
-              for(k=0;k<=9;k++){  
-                  sum=i*i*i+j*j*j+k*k*k;  
-                  if(i*100+j*10+k==sum){  
-                      System.out.println(sum);  
-                  }  
-              }  
-          }  
-      }  
-         
-   }          
-}  
-
-【程序4】 
+【程序4】  ok
 题目：将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。 
 (1)如果这个质数恰等于n，则说明分解质因数的过程已经结束，打印出即可。 
 (2)如果n<>k，但n能被k整除，则应打印出k的值，并用n除以k的商,作为新的正整数你n,重复执行第一步。 
 (3)如果n不能被k整除，则用k+1作为k的值,重复执行第一步。 
 
-[java] view plain copy
-import java.util.*;   
-public class Example4{   
-  public static void main(String[] args){   
-    int x;  
-    Scanner in = new Scanner(System.in);//定义从键盘输入   
-    System.out.print("请输入一个正整数:");//提示   
-    x = in.nextInt(); //将从键盘输入的数赋值给x   
-    new PrimeSplit(x); //匿名初始化一个对象，还有参数的构造函数   
-  }   
-}   
-class PrimeSplit{   
-  int k = 2; //将最小的质数赋值给k   
-  public PrimeSplit(int x){  //小于等于1的数不可以分解   
-    if(x<=1){   
-      System.out.println(x+"是无效的被分解数");   
-    }   
-    else if(x==2){   
-      System.out.println(x+"分解后的质因数为: 1*"+x);   //如果输入的是最小质数2，   
-    }else {   
-      System.out.print(x+"分解后的质因数为: 1"); //1是所有的正整数的质数   
-      while(k<=x){   //输入的数可以被k整除   
-        if(x%k==0){   
-          System.out.print("*"+k);           //将k添加到结果中   
-          x = x/k;//除以最小质数后重新循环   
-          }   
-         else{   
-          k++;   
-          }   
-        }   
-      }   
-    }      
-  }  
-
-【程序5】 
+【程序5】 ok
 题目：利用条件运算符的嵌套来完成此题：学习成绩>=90分的同学用A表示，60-89分之间的用B表示，60分以下
 的用C表示。 
-[java] view plain copy
-public class Example5 {  
-    public static void main(String args[]){   
-       int score=90;         //分数的值可以随便修改  
-       if(score>=90){  
-           System.out.println("A");  
-       }  
-       else if(score>=60){  
-           System.out.println("B");  
-       }  
-       else{  
-           System.out.println("C");  
-       }  
-              
-    }  
-}  
+
 
 【程序6】 
 题目：输入两个正整数m和n，求其最大公约数和最小公倍数。 
