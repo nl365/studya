@@ -1,4 +1,4 @@
-package com.brain.study.test;
+package com.brain.study.test.interview;
 
 public class Test<T extends Object> {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.brain.study.test;
+package com.brain.study.test.interview;
 
 /**
  * @author brain
